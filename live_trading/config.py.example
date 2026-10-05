@@ -1,0 +1,35 @@
+# API配置
+API_KEY = "your_binance_api_key_here"
+API_SECRET = "your_binance_api_secret_here"
+
+# 测试网开关（True=测试网假钱，False=真实盘真钱）
+USE_TESTNET = True
+
+# 代理设置（如果需要）
+PROXY = ""  # 例如: "http://127.0.0.1:7890" 或留空 ""
+
+# 交易币种列表（根据选币标准调整）
+SYMBOLS = [
+    "AEROUSDT",
+    "ORDIUSDT",
+    "CLOUSDT",
+    "EVAAUSDT",
+    "SKYAIUSDT",
+]
+
+# 资金管理
+LEVERAGE = 10           # 杠杆倍数（实盘建议10-15x，回测用20x）
+MARGIN_RATIO = 0.10     # 每单保证金占总余额的比例
+MIN_MARGIN = 0.0        # 最小保证金U（0表示无下限）
+
+# 策略参数（已优化，不建议修改）
+EMA_FAST1, EMA_FAST2 = 144, 169     # 快速EMA周期
+EMA_SLOW1, EMA_SLOW2 = 576, 676     # 慢速EMA周期
+ATR_PERIOD = 38                      # ATR周期
+ATR_MULT = 32.0                      # ATR移动止盈倍数
+SL_PCT = 0.03                        # 固定止损比例（3%）
+
+# 其他配置
+FEE_RATE = 0.0004                    # 手续费率（仅用于显示）
+MARGIN_TYPE = "ISOLATED"             # 保证金模式：ISOLATED=逐仓，CROSSED=全仓
+STOP_WORKING_TYPE = "CONTRACT_PRICE" # 止损触发价类型
